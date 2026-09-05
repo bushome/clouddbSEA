@@ -1,0 +1,8 @@
+[2026-09-03T21:14:41.179Z] Watchdog starting.
+[2026-09-03T21:14:41.182Z] Launching child process: node main.js (cwd: C:\Program Files\iisnode\www\clouddb\dist)
+[2026-09-03T21:15:16.231Z] Health check passed.
+[2026-09-03T21:21:38.751Z] Child process exited (code=4294967295, signal=null).
+[2026-09-03T21:21:38.752Z] Crash #1 in current 300000ms window (reason: exited with code 4294967295).
+[2026-09-03T21:21:38.752Z] Waiting 1000ms before restart attempt.
+[2026-09-03T21:21:39.755Z] Launching child process: node main.js (cwd: C:\Program Files\iisnode\www\clouddb\dist)
+[2026-09-03T21:22:14.791Z] Health check passed.

@@ -1,0 +1,1 @@
+{ "main": "watchdog/watchdog.js", "output": "build/watchdog-sea-prep.blob", "disableExperimentalSEAWarning": true }

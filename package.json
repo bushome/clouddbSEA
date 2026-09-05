@@ -1,0 +1,105 @@
+{
+    "name": "cloud-storage",
+    "version": "1.1.0",
+    "description": "API Backend for the ARK Cloud Storage Mod",
+    "homepage": "https://www.curseforge.com/ark-survival-ascended/mods/cloud-storage",
+    "author": "ark-cloud-storage",
+    "private": false,
+    "license": "MIT",
+    "overrides": {
+        "mariadb": "3.5.3"
+    },
+    "scripts": {
+        "build": "nest build",
+        "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+        "start": "nest start",
+        "start:dev": "nest start --watch",
+        "start:debug": "nest start --debug --watch",
+        "start:prod": "node dist/main",
+        "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:cov": "jest --coverage",
+        "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+        "deploy": "semantic-release",
+		"prisma:generate:mysql": "prisma generate --schema=prisma/schema.mysql.prisma",
+		"prisma:generate:sqlite": "prisma generate --schema=prisma/schema.sqlite.prisma",
+		"prisma:generate": "npm run prisma:generate:mysql && npm run prisma:generate:sqlite",
+		"prisma:sync-sqlite-schema": "powershell -ExecutionPolicy Bypass -File scripts/Update-SqliteSchema.ps1"
+    },
+    "dependencies": {
+        "@nestjs/common": "~11.1.6",
+        "@nestjs/core": "~11.1.6",
+        "@nestjs/event-emitter": "~3.0.1",
+        "@nestjs/platform-express": "~11.1.6",
+        "@nestjs/platform-ws": "~11.1.6",
+        "@nestjs/schedule": "^12.0.1",
+        "@nestjs/websockets": "~11.1.6",
+        "@prisma/adapter-better-sqlite3": "6.17.1",
+        "@prisma/adapter-mariadb": "6.17.1",
+        "@prisma/client": "6.17.1",
+        "boolean": "~3.2.0",
+        "class-transformer": "~0.5.1",
+        "class-validator": "~0.14.2",
+        "reflect-metadata": "~0.2.2",
+        "rxjs": "~7.8.2"
+    },
+    "devDependencies": {
+        "@codedependant/semantic-release-docker": "~5.1.1",
+        "@eslint/eslintrc": "~3.3.1",
+        "@eslint/js": "~9.38.0",
+        "@nestjs/cli": "~11.0.10",
+        "@nestjs/schematics": "~11.0.9",
+        "@nestjs/testing": "~11.1.6",
+        "@semantic-release/git": "~10.0.1",
+        "@semantic-release/github": "~12.0.0",
+        "@semantic-release/npm": "~13.0.0",
+        "@types/express": "~5.0.3",
+        "@types/jest": "~30.0.0",
+        "@types/node": "~24.8.1",
+        "@types/supertest": "~6.0.3",
+        "@types/ws": "~8.18.1",
+        "@typescript-eslint/eslint-plugin": "~8.46.1",
+        "@typescript-eslint/parser": "~8.46.1",
+        "eslint": "~9.38.0",
+        "eslint-config-prettier": "~10.1.8",
+        "eslint-plugin-prettier": "~5.5.4",
+        "globals": "~16.4.0",
+        "jest": "~30.2.0",
+        "prettier": "~3.6.2",
+        "prisma": "~6.17.1",
+        "semantic-release": "~25.0.0",
+        "source-map-support": "~0.5.21",
+        "supertest": "~7.1.4",
+        "ts-jest": "~29.4.5",
+        "ts-loader": "~9.5.4",
+        "ts-node": "~10.9.2",
+        "tsconfig-paths": "~4.2.0",
+        "typescript": "~5.9.3"
+    },
+    "jest": {
+        "preset": "ts-jest",
+        "moduleFileExtensions": [
+            "js",
+            "json",
+            "ts"
+        ],
+        "rootDir": "src",
+        "testRegex": ".*\\.spec\\.ts$",
+        "transform": {
+            "~.+\\.(t|j)s$": "ts-jest"
+        },
+        "collectCoverageFrom": [
+            "**/*.(t|j)s"
+        ],
+        "coverageDirectory": "../coverage",
+        "testEnvironment": "node"
+    },
+    "allowScripts": {
+        "better-sqlite3": true,
+        "@prisma/client": true,
+        "@prisma/engines": true,
+        "prisma": true,
+        "unrs-resolver": true
+    }
+}
