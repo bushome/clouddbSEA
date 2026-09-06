@@ -22,10 +22,10 @@
         "test:cov": "jest --coverage",
         "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
         "deploy": "semantic-release",
-		"prisma:generate:mysql": "prisma generate --schema=prisma/schema.mysql.prisma",
-		"prisma:generate:sqlite": "prisma generate --schema=prisma/schema.sqlite.prisma",
-		"prisma:generate": "npm run prisma:generate:mysql && npm run prisma:generate:sqlite",
-		"prisma:sync-sqlite-schema": "powershell -ExecutionPolicy Bypass -File scripts/Update-SqliteSchema.ps1"
+        "prisma:generate:mysql": "prisma generate --schema=prisma/schema.mysql.prisma",
+        "prisma:generate:sqlite": "prisma generate --schema=prisma/schema.sqlite.prisma",
+        "prisma:generate": "npm run prisma:generate:mysql && npm run prisma:generate:sqlite",
+        "prisma:sync-sqlite-schema": "powershell -ExecutionPolicy Bypass -File scripts/Update-SqliteSchema.ps1"
     },
     "dependencies": {
         "@nestjs/common": "~11.1.6",
@@ -35,7 +35,7 @@
         "@nestjs/platform-ws": "~11.1.6",
         "@nestjs/schedule": "^12.0.1",
         "@nestjs/websockets": "~11.1.6",
-        "@prisma/adapter-better-sqlite3": "6.17.1",
+        "@prisma/adapter-libsql": "6.17.1",
         "@prisma/adapter-mariadb": "6.17.1",
         "@prisma/client": "6.17.1",
         "boolean": "~3.2.0",
@@ -96,7 +96,6 @@
         "testEnvironment": "node"
     },
     "allowScripts": {
-        "better-sqlite3": true,
         "@prisma/client": true,
         "@prisma/engines": true,
         "prisma": true,
