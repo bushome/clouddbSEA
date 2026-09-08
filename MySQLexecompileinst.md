@@ -12,7 +12,7 @@ npx esbuild dist/main.js --bundle --platform=node --target=node24 --format=cjs -
 node --experimental-sea-config sea-config.json
 
 node -e "require('fs').copyFileSync(process.execPath, 'build/clouddb-test.exe')"
-npx postject build/clouddb-test.exe NODE_SEA_BLOB build/sea-prep.blob --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2
+npx postject build/cloudstorageapi.exe NODE_SEA_BLOB build/sea-prep.blob --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2
 ```
 
 That's it for a normal rebuild. Skip to **Launching** below.
