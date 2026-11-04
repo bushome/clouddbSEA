@@ -148,3 +148,8 @@ directly via `isExe`, confirmed clean boot and real client traffic, then
 force-killed the app exe and confirmed detect → crash-count → backoff →
 clean relaunch with a new PID — identical behavior to the pre-existing
 `node dist/main.js` forced-kill test.
+
+## Development
+
+Developed with AI assistance (Claude). Every change was reviewed and tested on a dedicated test server
+before going live.
